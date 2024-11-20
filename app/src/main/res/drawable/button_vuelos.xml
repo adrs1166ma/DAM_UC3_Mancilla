@@ -1,0 +1,6 @@
+<!-- res/drawable/button_vuelos.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#113adc"/> <!-- Color de fondo azul para el botón "Vuelos" -->
+    <stroke android:color="#113adc" android:width="2dp"/> <!-- Borde azul -->
+    <corners android:radius="16dp"/> <!-- Esquinas redondeadas -->
+</shape>

@@ -1,0 +1,8 @@
+<!-- res/drawable/button_state.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Estado activado (presionado) para el botón "Vuelos" -->
+    <item android:drawable="@drawable/button_vuelos" android:state_selected="true"/>
+
+    <!-- Estado inactivo para los demás botones -->
+    <item android:drawable="@drawable/button_inactive"/>
+</selector>

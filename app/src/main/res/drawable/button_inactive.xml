@@ -1,0 +1,6 @@
+<!-- res/drawable/button_inactive.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <stroke android:color="#a49cb2" android:width="2dp"/> <!-- Borde gris -->
+    <solid android:color="@android:color/transparent"/> <!-- Fondo transparente -->
+    <corners android:radius="16dp"/> <!-- Esquinas redondeadas -->
+</shape>
