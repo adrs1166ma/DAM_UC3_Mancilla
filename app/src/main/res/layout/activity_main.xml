@@ -1,19 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-    <TextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Hello World!"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".MainActivity"
+    android:background="@color/latamBackground">
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Header: Título -->
+    <TextView
+        android:id="@+id/tvHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comprar"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Tabs -->
+    <HorizontalScrollView
+        android:id="@+id/tabMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/tab_background"
+        app:layout_constraintTop_toBottomOf="@id/tvHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vuelos"
+                android:backgroundTint="@color/latamPrimary"
+                android:textColor="@color/white" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Paquetes" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hoteles" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Autos" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seguros" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Formulario -->
+
+    <!-- Tipo de Vuelo -->
+    <RadioGroup
+        android:id="@+id/flightTypeGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tabMenu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <RadioButton
+            android:id="@+id/rbRoundTrip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ida e volta"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/rbOneWay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Somente ida" />
+    </RadioGroup>
+
+    <!-- Campo: Origen -->
+    <EditText
+        android:id="@+id/etOrigin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Origen"
+        android:inputType="text"
+        android:drawableStart="@drawable/ic_plane_departure"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/flightTypeGroup"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Campo: Destino -->
+    <EditText
+        android:id="@+id/etDestination"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Destino"
+        android:inputType="text"
+        android:drawableStart="@drawable/ic_plane_arrival"
+        app:layout_constraintTop_toBottomOf="@id/etOrigin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Campo: Fecha Ida -->
+    <EditText
+        android:id="@+id/etDepartureDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Data ida"
+        android:inputType="date"
+        android:drawableStart="@drawable/ic_calendar"
+        app:layout_constraintTop_toBottomOf="@id/etDestination"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Campo: Fecha Vuelta -->
+    <EditText
+        android:id="@+id/etReturnDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Data volta"
+        android:inputType="date"
+        android:drawableStart="@drawable/ic_calendar"
+        app:layout_constraintTop_toBottomOf="@id/etDepartureDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Clase -->
+    <Spinner
+        android:id="@+id/spClass"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/etReturnDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:entries="@array/class_options" />
+
+    <!-- Pasajeros -->
+    <Spinner
+        android:id="@+id/spPassengers"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/spClass"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:entries="@array/passenger_options" />
+
+    <!-- Usar Puntos -->
+    <CheckBox
+        android:id="@+id/cbLatamPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Usar Pontos LATAM Pass"
+        app:layout_constraintTop_toBottomOf="@id/spPassengers"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Botón: Procurar -->
+    <Button
+        android:id="@+id/btnSearchFlights"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Procurar voos"
+        android:backgroundTint="@color/latamSecondary"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/cbLatamPass"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

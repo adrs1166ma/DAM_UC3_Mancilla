@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">DAM_UC3_Mancilla</string>
+    <string-array name="class_options">
+        <item>Economy</item>
+        <item>Business</item>
+    </string-array>
+    <string-array name="passenger_options">
+        <item>1 adulto</item>
+        <item>2 adultos</item>
+        <item>3 adultos</item>
+    </string-array>
+
 </resources>
