@@ -1,0 +1,9 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:left="0dp" android:right="0dp" android:top="0dp" android:bottom="0dp">
+        <shape>
+            <solid android:color="@android:color/transparent"/> <!-- Fondo transparente -->
+            <stroke android:color="#a49cb2" android:width="2dp"/> <!-- Borde gris -->
+            <corners android:radius="4dp"/> <!-- Esquinas redondeadas -->
+        </shape>
+    </item>
+</layer-list>

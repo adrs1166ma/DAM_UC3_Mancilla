@@ -90,16 +90,30 @@
 
         <RadioButton
             android:id="@+id/rbRoundTrip"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Ida e volta"
-            android:checked="true" />
+            android:layout_weight="1"
+            android:text="Ida y vuelta"
+            android:textColor="#007AFF"
+            android:gravity="center"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:background="@drawable/selected_button_shape"
+            android:checked="true"
+            android:button="@drawable/custom_radio_button" />
 
         <RadioButton
             android:id="@+id/rbOneWay"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Somente ida" />
+            android:layout_weight="1"
+            android:text="Solo ida"
+            android:textColor="#000"  android:textStyle="bold"
+            android:gravity="center"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:background="@drawable/unselected_button_shape"
+            android:button="@drawable/custom_radio_button" />/>
     </RadioGroup>
 
     <!-- Campo: Origen -->
